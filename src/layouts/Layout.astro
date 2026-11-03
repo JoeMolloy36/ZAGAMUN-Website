@@ -2,10 +2,9 @@
 ---
 interface Props {
   title: string;
-  appMode?: boolean;
 }
 
-const { title, appMode = false } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,88 +13,77 @@ const { title, appMode = false } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#244638" />
+    
+    <title>{title} | ZAGAMUN</title>
 
-    <meta name="theme-color" content="#251a16" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Co-Op Café" />
+    <meta
+      name="description"
+      content="ZAGAMUN is a Model United Nations conference bringing together delegates to debate global issues, develop diplomatic skills and collaborate on solutions."
+    />
 
-   <title>{title}Co-Op Cafe</title>
-<meta
-  name="description"
-  content="Co-Op Cafe is a cosy café simulator where you and your friends prepare drinks, serve customers, earn money and customise your own café."
-/>
-<meta
-  name="keywords"
-  content="Co-Op Café, Co Op Cafe, co-op cafe game, cosy cafe simulator, cooperative cafe game, multiplayer cafe game"
-/>
-
-  <meta name="google-site-verification" content="gwjqiyAS_0sHS7hVFVp2TspzPdVEcbMpX1sihVgVM3c" />
+    <meta
+      name="keywords"
+      content="ZAGAMUN, Model United Nations, MUN, student conference, diplomacy, debate, international relations"
+    />
 
   </head>
 
-  
-
   <body>
-  <header>
-    <a class="logo" href="/">
-  <img src="/icons/icon.png" alt="" class="logo-image" />
-  <span>Co-Op Café</span>
-</a>
+    <header>
+      <a class="logo" href="/">
+        <span>ZAGAMUN</span>
+      </a>
 
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/how-to-play">How to Play</a>
-          <a class="play-button" href="/play">Play Demo</a>
-        </nav>
-  </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/committees">Committees</a>
+        <a href="/schedule">Schedule</a>
+        <a class="nav-button" href="/register">Register</a>
+      </nav>
+    </header>
 
-  <slot />
+    <slot />
 
-  <footer>
-    <p>© 2026 Co-Op Café · Made by JoeDev36.</p>
-  </footer>
-</body>
-
-
+    <footer>
+      <p>© 2026 ZAGAMUN · Model United Nations Conference.</p>
+    </footer>
+  </body>
 </html>
 
 <style is:global>
   /* ========================================
      DESIGN SETTINGS
-     Change these values to customise the site
      ======================================== */
 
   :root {
-    /* Colours */
-    --page-bg: #ffb13d;
-    --header-bg: #e69927;
-    --footer-bg: #e69927;
+    /* Colour palette */
+    --page-bg: #f3f5ef;
+    --header-bg: #244638;
+    --footer-bg: #1c382d;
 
-    --text-color: white;
-    --muted-color: #f6e9d6;
+    --text-color: #263d32;
+    --muted-color: #dce6dc;
 
-    --accent-color: #a37f6f;
-    --accent-hover: #f2b36f;
-    --border-color: #c77700;
+    --accent-color: #78977c;
+    --accent-hover: #a9c4a4;
+    --border-color: #3e6850;
 
     /* Typography */
-    --logo-size: 2rem;
-    --nav-size: 1.9rem;
-    --button-size: 1.75rem;
-    --footer-size: 1.5rem;
+    --logo-size: 2.2rem;
+    --nav-size: 1.35rem;
+    --button-size: 1.25rem;
+    --footer-size: 1rem;
 
     /* Spacing */
     --header-padding: 1.5rem 5%;
-    --nav-gap: 1.5rem;
-    --button-padding: 0.7rem 1.1rem;
+    --nav-gap: 2rem;
+    --button-padding: 0.7rem 1.3rem;
 
     /* General */
     --content-width: 1200px;
-    --border-radius: 12px;
+    --border-radius: 8px;
 
     font-family: "m5x7", sans-serif;
     font-weight: bold;
@@ -110,7 +98,7 @@ const { title, appMode = false } = Astro.props;
 
   @font-face {
     font-family: "m5x7";
-    src: url("/fonts/m5x7.ttf") format("truetype");
+    src: url("/fonts/Arial.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -138,7 +126,7 @@ const { title, appMode = false } = Astro.props;
     color: var(--text-color);
     font-family: "m5x7", sans-serif;
     font-weight: bold;
-    -webkit-text-stroke: 0.5px;
+    -webkit-text-stroke: 0.3px;
   }
 
   a {
@@ -146,7 +134,6 @@ const { title, appMode = false } = Astro.props;
     text-decoration: none;
   }
 
-  /* Keep the main page content between header and footer */
   body > main {
     flex: 1;
   }
@@ -168,27 +155,19 @@ const { title, appMode = false } = Astro.props;
     border-bottom: 3px solid var(--border-color);
   }
 
-  /* Website logo / title */
-
-
+  /* Website title */
 
   .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--logo-size);
-  font-weight: 800;
-  white-space: nowrap;
-}
+    display: flex;
+    align-items: center;
+    font-size: var(--logo-size);
+    font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    color: #f3f5ef;
+  }
 
-.logo-image {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
-  /* Navigation links */
+  /* Navigation */
 
   nav {
     display: flex;
@@ -199,6 +178,7 @@ const { title, appMode = false } = Astro.props;
 
   nav a {
     font-size: var(--nav-size);
+    color: #e4ebe2;
     transition: color 0.2s ease;
   }
 
@@ -206,20 +186,15 @@ const { title, appMode = false } = Astro.props;
     color: var(--accent-hover);
   }
 
-.text-outline {
-  -webkit-text-stroke: 1px #f79502;
-  paint-order: stroke fill;
-}
-
   /* ========================================
-     PLAY DEMO BUTTON
+     REGISTER BUTTON
      ======================================== */
 
-  .play-button {
+  .nav-button {
     display: inline-block;
 
-    background: var(--border-color);
-    color: var(--text-color);
+    background: var(--accent-color);
+    color: #ffffff;
 
     padding: var(--button-padding);
     border-radius: var(--border-radius);
@@ -232,13 +207,13 @@ const { title, appMode = false } = Astro.props;
       transform 0.2s ease;
   }
 
-  .play-button:hover {
+  .nav-button:hover {
     background: var(--accent-hover);
-    color: var(--text-color);
+    color: var(--header-bg);
     transform: translateY(-2px);
   }
 
-  .play-button:active {
+  .nav-button:active {
     transform: translateY(0);
   }
 
@@ -258,10 +233,10 @@ const { title, appMode = false } = Astro.props;
     width: 100%;
 
     text-align: center;
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
 
     background: var(--footer-bg);
-    color: var(--text-color);
+    color: #dce6dc;
 
     border-top: 3px solid var(--border-color);
     font-size: var(--footer-size);
@@ -269,26 +244,6 @@ const { title, appMode = false } = Astro.props;
 
   footer p {
     margin: 0;
-  }
-
-
-
-  /* ========================================
-     APP MODE
-     Used when appMode=true
-     Hides the website header and footer
-     ======================================== */
-
-  body.app-mode {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: var(--page-bg);
-  }
-
-  body.app-mode header,
-  body.app-mode footer {
-    display: none;
   }
 
   /* ========================================
@@ -303,33 +258,27 @@ const { title, appMode = false } = Astro.props;
       padding: 1rem;
     }
 
-  .logo {
-  font-size: 1.6rem;
-  gap: 8px;
-}
-
-.logo-image {
-  width: 38px;
-  height: 38px;
-}
+    .logo {
+      font-size: 1.8rem;
+    }
 
     nav {
       justify-content: center;
-      gap: 0.8rem;
+      gap: 1rem;
     }
 
     nav a {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
-    .play-button {
+    .nav-button {
       padding: 0.6rem 0.9rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     footer {
       padding: 1.2rem 0.75rem;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
   }
 
