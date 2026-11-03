@@ -3,90 +3,76 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="">
+<Layout title="ZAGAMUN 2026">
   <main>
     <img
       class="center-logo"
-      src="/icons/icon.png"
-      alt="Co-Op Café logo"
+      src="/logo.png"
+      alt="ZAGAMUN logo"
     />
 
-    <h1>Co-Op Café</h1>
-    <p>A Cozy Café Simulator.</p>
+    <h1>ZAGAMUN 2026</h1>
 
-    <a href="/play" class="hero-play-button">Play Demo</a>
-
+    <p>
+      A Model United Nations conference bringing together delegates
+      to debate global issues, develop diplomatic skills and shape
+      solutions through collaboration.
+    </p>
   </main>
 
   <style>
     main {
-      min-height: 70vh;
+      min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      gap: 10px;
-      padding: 1rem;
+      gap: 15px;
+      padding: 2rem 1.5rem;
     }
 
     .center-logo {
-      width: 350px;
-      height: 350px;
+      width: 280px;
+      height: 280px;
       object-fit: contain;
-      margin-bottom: -28px;
-      transform: translateX(5px);
+      margin-bottom: 5px;
     }
 
     h1 {
-      font-size: 80px;
+      font-size: clamp(3rem, 8vw, 6rem);
       margin: 0;
-      margin-top: 0;
+      color: #ffffff;
+      letter-spacing: 2px;
     }
 
     p {
-      font-size: 40px;
-      margin: 0;
+      max-width: 750px;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 1.4;
+      margin: 5px 0 0;
+      color: #ffffff;
     }
 
-    
-.hero-play-button {
-  display: inline-block;
-  margin-top: 75px;
-  margin-bottom: 50px;
-  padding: 16px 55px;
-  font-size: 35px;
-  background: #c77700;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
-
-.hero-play-button:hover {
-  background: #965a32;
-}
-
-
-
-
     @media (max-width: 600px) {
+      main {
+        min-height: 70vh;
+        padding: 2rem 1.25rem;
+        gap: 12px;
+      }
+
       .center-logo {
-        width: 180px;
-        height: 180px;
+        width: 190px;
+        height: 190px;
       }
 
       h1 {
-        font-size: clamp(2.5rem, 10vw, 5rem);
+        font-size: clamp(2.5rem, 11vw, 4rem);
       }
 
       p {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        font-size: 1.3rem;
       }
     }
-
-    
-
   </style>
 </Layout>
