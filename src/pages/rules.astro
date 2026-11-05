@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Rules & Procedure">
+  <main class="rules-page">
+    <section class="intro">
+      <p class="section-label">ZAGAMUN 2026</p>
+      <h1>Rules & Procedure</h1>
+      <div class="title-divider"></div>
+      <p class="intro-text">
+        Learn about the rules and procedures followed throughout ZAGAMUN 2026.
+      </p>
+    </section>
+
+    <section class="procedure-card">
+      <h2>Conference Procedure</h2>
+      <div class="card-divider"></div>
+
+      <p>
+        ZAGAMUN 2026 follows the <strong>TERMUN Rules and Procedure</strong>
+        , providing delegates with a structured framework for debate,
+        negotiation and resolution writing.
+      </p>
+
+      <p>
+        All delegates are expected to familiarise themselves with the rules
+        before attending the conference. These rules outline the procedures
+        used during committee sessions, including motions, points, speeches,
+        amendments and voting.
+      </p>
+
+      <a
+        class="rules-button"
+        href="https://termun.com/page/termun-procedures"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Rules & Procedure
+        <span aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .rules-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+    color: white;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0;
+  }
+
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  .procedure-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: left;
+  }
+
+  .procedure-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0;
+  }
+
+  .card-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .procedure-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .rules-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .rules-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: white;
+  }
+
+  @media (max-width: 700px) {
+    .rules-page {
+      padding: 3rem 0 4rem;
+    }
+
+    .procedure-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
