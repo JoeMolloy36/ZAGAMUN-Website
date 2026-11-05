@@ -7,30 +7,31 @@ const awards = [
     name: "Best Delegate",
     description: "Awarded to the best delegate in each committee room who demonstrates outstanding performance throughout the conference",
     criteria: [
-      "Quality of debate and contributions",
-      "Diplomatic skill and negotiation",
-      "Knowledge and understanding of topics",
-      "Leadership and collaboration"
+      "Submitted a resolution of high standard",
+      "Made an outstanding contribution to the debate"
+      "Represented their countries views and policies accurately",
+      "Showcased a deep knowledge and understanding of topics debated",
+      "Remained respectful and helpful to other delegates throughout the committee"
     ]
   },
   {
     name: "Highly Commended Delegate",
     description: "Awarded to 2 delegates per committee who consistently demonstrate excellent engagement and participation.",
+      "Made an strong contribution to the debate"
+      "Represented their countries views and policies accurately",
+      "Showcased a knowledge and understanding of topics debated",
+      "Remained respectful and helpful to other delegates throughout the committee"
     criteria: [
-      "Constructive participation in debate",
-      "Quality of speeches and arguments",
-      "Cooperation with fellow delegates",
-      "Understanding of committee proceedings"
     ]
   },
   {
     name: "Best Junior Delegate",
     description: "Awarded to the best student from 1st to 3rd year in each committee",
     criteria: [
-      "Active involvement in discussions",
-      "Diplomatic conduct",
-      "Creative solutions and ideas",
-      "Commitment throughout the conference"
+         "Made an strong contribution to the debate"
+      "Represented their countries views and policies accurately",
+      "Showcased a knowledge and understanding of topics debated",
+      "Remained respectful and helpful to other delegates throughout the committee"
     ]
   }
 ];
@@ -54,9 +55,7 @@ const awards = [
       {awards.map((award, index) => (
         <article class="award-card">
 
-          <span class="award-number">
-            AWARD 0{index + 1}
-          </span>
+          
 
           <h2>{award.name}</h2>
 
