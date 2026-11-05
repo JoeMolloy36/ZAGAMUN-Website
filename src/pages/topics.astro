@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 const committees = [
   {
     name: "Security Council",
-    headChair: true,
+    headChair: "Joe Bloggs",
     topics: [
       "TQO Treaty Erosion",
       "South China Sea",
@@ -14,7 +14,7 @@ const committees = [
   },
   {
     name: "DISEC",
-    headChair: false,
+    headChair: "Jane Smith",
     topics: [
       "Autonomous Weapons",
       "Drone Regulation",
@@ -23,7 +23,7 @@ const committees = [
   },
   {
     name: "General Assembly",
-    headChair: false,
+    headChair: "John Murphy",
     topics: [
       "International Cooperation",
       "Global Development",
@@ -53,9 +53,9 @@ const committees = [
           <div class="committee-heading">
             <h2>{committee.name}</h2>
 
-            {committee.headChair && (
-              <span class="head-chair">Head Chair</span>
-            )}
+            <span class="head-chair">
+              Head Chair: {committee.headChair}
+            </span>
           </div>
 
           <div class="topic-list">
@@ -105,15 +105,11 @@ const committees = [
     line-height: 1.6;
   }
 
-  /* Committee grid */
-
   .committee-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
   }
-
-  /* Committee cards */
 
   .committee-card {
     background: white;
@@ -128,8 +124,6 @@ const committees = [
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
   }
-
-  /* Committee heading */
 
   .committee-heading {
     display: flex;
@@ -152,10 +146,8 @@ const committees = [
     color: #248b46;
     font-size: 0.8rem;
     font-weight: bold;
-    white-space: nowrap;
+    text-align: right;
   }
-
-  /* Topics */
 
   .topic-list {
     display: flex;
@@ -183,8 +175,6 @@ const committees = [
     line-height: 1.4;
   }
 
-  /* Mobile layout */
-
   @media (max-width: 650px) {
     .committee-grid {
       grid-template-columns: 1fr;
@@ -199,3 +189,4 @@ const committees = [
     }
   }
 </style>
+</Layout>
