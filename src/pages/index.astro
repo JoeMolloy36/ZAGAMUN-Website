@@ -17,20 +17,45 @@ import Layout from "../layouts/Layout.astro";
         <h1>ZAGAMUN 2026</h1>
 
         <p class="intro">
-          27th & 28th November 
+          27th & 28th November
         </p>
       </div>
     </section>
 
     <!-- Description section -->
     <section class="description">
-      <h2>Welcome to ZAGAMUN 2026</h2>
+      <div class="description-content">
 
-      <p>
-        <!-- Add your conference description here -->
-        ZAGAMUN brings together delegates from across Ireland
-        to debate, negotiate and collaborate on international issues.
-      </p>
+        <!-- Text card -->
+        <div class="description-card">
+          <span class="section-label">ABOUT THE CONFERENCE</span>
+
+          <h2>Welcome to ZAGAMUN 2026</h2>
+
+          <div class="title-divider"></div>
+
+          <p>
+            ZAGAMUN brings together delegates from across Ireland
+            to debate, negotiate and collaborate on international
+            issues.
+          </p>
+
+          <p>
+            Join us for two days of diplomacy, discussion and
+            collaboration as we explore some of the world's most
+            pressing challenges.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="description-image">
+          <img
+            src="/conference.jpg"
+            alt="ZAGAMUN conference"
+          />
+        </div>
+
+      </div>
     </section>
   </main>
 
@@ -92,25 +117,82 @@ import Layout from "../layouts/Layout.astro";
 
     /* DESCRIPTION SECTION */
     .description {
-      min-height: 60vh;
-      padding: 5rem 2rem;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 6rem 2rem;
       color: #ffffff;
     }
 
-    .description h2 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
+    .description-content {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
     }
 
-    .description p {
-      font-size: 1.2rem;
-      line-height: 1.7;
+    /* TEXT CARD */
+    .description-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #d6b77a;
+      margin-bottom: 1rem;
+    }
+
+    .description-card h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .title-divider {
+      width: 65px;
+      height: 3px;
+      background: #d6b77a;
+      margin: 1.5rem 0;
+      border-radius: 5px;
+    }
+
+    .description-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0 0 1.2rem;
+    }
+
+    .description-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* IMAGE */
+    .description-image {
+      min-height: 400px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .description-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+      display: block;
     }
 
     /* MOBILE */
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .hero {
         min-height: 85vh;
         padding: 2rem 1.25rem;
@@ -130,7 +212,25 @@ import Layout from "../layouts/Layout.astro";
       }
 
       .description {
-        padding: 3rem 1.5rem;
+        padding: 3rem 1.25rem;
+      }
+
+      .description-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .description-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .description-image {
+        min-height: 250px;
+      }
+
+      .description-image img {
+        min-height: 250px;
+        max-height: 350px;
       }
     }
   </style>
