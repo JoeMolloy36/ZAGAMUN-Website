@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 const committees = [
   {
     name: "Security Council",
+    headChair: true,
     topics: [
       "TQO Treaty Erosion",
       "South China Sea",
@@ -13,6 +14,7 @@ const committees = [
   },
   {
     name: "DISEC",
+    headChair: false,
     topics: [
       "Autonomous Weapons",
       "Drone Regulation",
@@ -21,6 +23,7 @@ const committees = [
   },
   {
     name: "General Assembly",
+    headChair: false,
     topics: [
       "International Cooperation",
       "Global Development",
@@ -47,7 +50,13 @@ const committees = [
       {committees.map((committee) => (
         <article class="committee-card">
 
-          <h2>{committee.name}</h2>
+          <div class="committee-heading">
+            <h2>{committee.name}</h2>
+
+            {committee.headChair && (
+              <span class="head-chair">Head Chair</span>
+            )}
+          </div>
 
           <div class="topic-list">
             {committee.topics.map((topic, index) => (
@@ -55,6 +64,7 @@ const committees = [
                 <span class="topic-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
                 <span class="topic-name">{topic}</span>
               </div>
             ))}
@@ -95,11 +105,15 @@ const committees = [
     line-height: 1.6;
   }
 
+  /* Committee grid */
+
   .committee-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
   }
+
+  /* Committee cards */
 
   .committee-card {
     background: white;
@@ -115,14 +129,33 @@ const committees = [
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
   }
 
-  .committee-card h2 {
+  /* Committee heading */
+
+  .committee-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #78977c;
+  }
+
+  .committee-heading h2 {
     color: #005b32;
     font-size: 1.4rem;
     font-weight: bold;
-    margin: 0 0 1rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 2px solid #78977c;
+    margin: 0;
   }
+
+  .head-chair {
+    color: #248b46;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Topics */
 
   .topic-list {
     display: flex;
@@ -150,6 +183,8 @@ const committees = [
     line-height: 1.4;
   }
 
+  /* Mobile layout */
+
   @media (max-width: 650px) {
     .committee-grid {
       grid-template-columns: 1fr;
@@ -164,5 +199,3 @@ const committees = [
     }
   }
 </style>
-</Layout>
-
