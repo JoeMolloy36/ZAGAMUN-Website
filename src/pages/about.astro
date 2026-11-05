@@ -1,105 +1,87 @@
 
-
 ---
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About | ">
-  <main>
-    <h1>About</h1>
+<Layout title="About | ZAGAMUN">
 
-    <section class="about-text">
+  <main class="placeholder-page">
+
+    <div class="placeholder-banner">
+      <span class="section-label">ZAGAMUN 2026</span>
+
+      <h1>Info will be updated shortly</h1>
+
+      <div class="title-divider"></div>
+
       <p>
-        Co-Op Café is a cozy café simulator where you build and run your own café.
+        Please check back soon for further information about the conference.
       </p>
+    </div>
 
-      <p>
-        Prepare drinks, serve customers, earn money and customise your
-        café to grow a space that feels unique to you.
-      </p>
-
-      <p>
-        The goal is to create a living, welcoming world where every players café
-        feels different and every shift brings something new.
-      </p>
-
-      <p>
-        The game is currently very early in development, but I'm building it piece by piece and I'd be happy to have you follow along!
-      </p>
-
-      <p>
-        More features and improvements are on the way!
-      </p>
-
-      <br>
-
-      <p>
-        Many cheers,
-        </p>
-
-      <p>
-        Joe (Creator of Co-Op Café)
-      </p>
-
-
-
-    </section>
   </main>
 
-  <style>
-    main {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 35px;
-      padding: 3rem 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 5rem);
-      margin: 0;
-      text-decoration: underline;
-      text-decoration-color: #c77700;
-      text-decoration-thickness: 4px;
-      text-underline-offset: 12px;
-    }
-
-    .about-text {
-      width: 100%;
-      max-width: 800px;
-      padding: 2rem;
-      background: #e69927;
-      border: 2px solid #a36104;
-      border-radius: 12px;
-      text-align: left;
-    }
-
-    p {
-      font-size: 30px;
-      line-height: 1.5;
-      margin: 0 0 1.25rem;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        gap: 30px;
-        padding: 2.5rem 1rem;
-      }
-
-      .about-text {
-        padding: 1.25rem;
-      }
-
-      p {
-        font-size: 21px;
-      }
-    }
-  </style>
 </Layout>
 
+<style>
+  .placeholder-page {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    color: #ffffff;
+  }
+
+  .placeholder-banner {
+    width: 100%;
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 3.5rem 3rem;
+    text-align: center;
+  }
+
+  .section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .placeholder-banner h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: #ffffff;
+    margin: 1.5rem auto;
+    border-radius: 5px;
+  }
+
+  .placeholder-banner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  @media (max-width: 700px) {
+    .placeholder-page {
+      min-height: 70vh;
+      padding: 2rem 1.25rem;
+    }
+
+    .placeholder-banner {
+      padding: 2.5rem 1.5rem;
+    }
+  }
+</style>
