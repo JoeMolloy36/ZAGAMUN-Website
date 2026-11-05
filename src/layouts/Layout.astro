@@ -82,6 +82,42 @@ const { title } = Astro.props;
     <footer>
       <p>© ZAGAMUN 2026 · Gonzaga Model United Nations Conference.</p>
     </footer>
+
+  <script>
+  const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", (event) => {
+    dropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.removeAttribute("open");
+      }
+    });
+  });
+
+  // Only allow one dropdown to be open at a time
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("toggle", () => {
+      if (dropdown.open) {
+        dropdowns.forEach((other) => {
+          if (other !== dropdown) {
+            other.removeAttribute("open");
+          }
+        });
+      }
+    });
+
+    // Close dropdown after selecting a link
+    dropdown.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        dropdown.removeAttribute("open");
+      });
+    });
+  });
+</script>
+
+
+
   </body>
 </html>
 
