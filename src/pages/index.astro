@@ -5,33 +5,68 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home">
   <main>
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-content">
+        <img
+          class="center-logo"
+          src="/logo.png"
+          alt="ZAGAMUN logo"
+        />
 
-  
+        <h1>ZAGAMUN 2026</h1>
 
-    <img
-      class="center-logo"
-      src="/logo.png"
-      alt="ZAGAMUN logo"
-    />
+        <p class="intro">
+          The Gonzaga College Model United Nations conference
+          bringing together delegates across Ireland
+        </p>
+      </div>
+    </section>
 
-    <h1>ZAGAMUN 2026</h1>
+    <!-- Description section -->
+    <section class="description">
+      <h2>Welcome to ZAGAMUN 2026</h2>
 
-    <p>
-      The Gonzaga College Model United Nations conference bringing together delegates
-      across Ireland
-    </p>
+      <p>
+        <!-- Add your conference description here -->
+        ZAGAMUN brings together delegates from across Ireland
+        to debate, negotiate and collaborate on international issues.
+      </p>
+    </section>
   </main>
 
   <style>
     main {
-      min-height: 75vh;
+      padding: 0;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 90vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 3rem 1.5rem;
+
+      background-image:
+        linear-gradient(
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.55)
+        ),
+        url("/background.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
-      padding: 2rem 1.5rem;
+      max-width: 900px;
     }
 
     .center-logo {
@@ -48,32 +83,55 @@ import Layout from "../layouts/Layout.astro";
       letter-spacing: 2px;
     }
 
-    p {
-  max-width: 750px;
-  font-size: clamp(1.3rem, 3vw, 2rem);
-  line-height: 1.4;
-  margin: 200px 0 200px;
-  color: #ffffff;
-}
+    .intro {
+      max-width: 750px;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 1.4;
+      margin: 10px 0 0;
+      color: #ffffff;
+    }
 
+    /* DESCRIPTION SECTION */
+    .description {
+      min-height: 60vh;
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    .description h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    .description p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    /* MOBILE */
     @media (max-width: 600px) {
-      main {
-        min-height: 70vh;
+      .hero {
+        min-height: 85vh;
         padding: 2rem 1.25rem;
-        gap: 12px;
       }
 
       .center-logo {
-        width: 190px;
-        height: 190px;
+        width: 220px;
+        height: 220px;
       }
 
       h1 {
         font-size: clamp(2.5rem, 11vw, 4rem);
       }
 
-      p {
+      .intro {
         font-size: 1rem;
+      }
+
+      .description {
+        padding: 3rem 1.5rem;
       }
     }
   </style>
