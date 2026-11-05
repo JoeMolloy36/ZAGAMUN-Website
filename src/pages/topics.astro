@@ -1,1 +1,168 @@
 
+---
+import Layout from "../layouts/Layout.astro";
+
+const committees = [
+  {
+    name: "Security Council",
+    topics: [
+      "TQO Treaty Erosion",
+      "South China Sea",
+      "Red Sea Crisis"
+    ]
+  },
+  {
+    name: "DISEC",
+    topics: [
+      "Autonomous Weapons",
+      "Drone Regulation",
+      "Nuclear Proliferation"
+    ]
+  },
+  {
+    name: "General Assembly",
+    topics: [
+      "International Cooperation",
+      "Global Development",
+      "Human Rights"
+    ]
+  }
+];
+---
+
+<Layout title="Topics | ZAGAMUN">
+
+  <main class="topics-page">
+
+    <section class="page-intro">
+      <h1>Conference Topics</h1>
+      <p>
+        Explore the committees and topics being discussed
+        at ZAGAMUN 2026.
+      </p>
+    </section>
+
+    <section class="committee-grid">
+
+      {committees.map((committee) => (
+        <article class="committee-card">
+
+          <h2>{committee.name}</h2>
+
+          <div class="topic-list">
+            {committee.topics.map((topic, index) => (
+              <div class="topic-item">
+                <span class="topic-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="topic-name">{topic}</span>
+              </div>
+            ))}
+          </div>
+
+        </article>
+      ))}
+
+    </section>
+
+  </main>
+
+</Layout>
+
+<style>
+  .topics-page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0 5rem;
+  }
+
+  .page-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-intro h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 0 0.75rem;
+  }
+
+  .page-intro p {
+    color: white;
+    font-size: 1.05rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .committee-card {
+    background: white;
+    border: 2px solid #3e6850;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+
+  .committee-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  }
+
+  .committee-card h2 {
+    color: #005b32;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 0 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #78977c;
+  }
+
+  .topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .topic-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 0;
+  }
+
+  .topic-number {
+    color: #248b46;
+    font-size: 0.85rem;
+    font-weight: bold;
+    min-width: 25px;
+  }
+
+  .topic-name {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 650px) {
+    .committee-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .topics-page {
+      padding-top: 2rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</Layout>
+
