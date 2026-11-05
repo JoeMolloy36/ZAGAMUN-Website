@@ -1,0 +1,236 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+
+const awards = [
+  {
+    name: "Best Delegate",
+    description: "Awarded to the best delegate in each committee room who demonstrates outstanding performance throughout the conference",
+    criteria: [
+      "Quality of debate and contributions",
+      "Diplomatic skill and negotiation",
+      "Knowledge and understanding of topics",
+      "Leadership and collaboration"
+    ]
+  },
+  {
+    name: "Highly Commended Delegate",
+    description: "Awarded to 2 delegates per committee who consistently demonstrate excellent engagement and participation.",
+    criteria: [
+      "Constructive participation in debate",
+      "Quality of speeches and arguments",
+      "Cooperation with fellow delegates",
+      "Understanding of committee proceedings"
+    ]
+  },
+  {
+    name: "Best Junior Delegate",
+    description: "Awarded to the best student from 1st to 3rd year in each committee",
+    criteria: [
+      "Active involvement in discussions",
+      "Diplomatic conduct",
+      "Creative solutions and ideas",
+      "Commitment throughout the conference"
+    ]
+  }
+];
+---
+
+<Layout title="Awards Criteria">
+
+  <main class="awards-page">
+
+    <section class="page-intro">
+      <span class="section-label">ZAGAMUN 2026</span>
+      <h1>Awards Criteria</h1>
+      <p>
+        Discover the awards presented at ZAGAMUN and the criteria
+        used to recognise outstanding delegates.
+      </p>
+    </section>
+
+    <section class="awards-grid">
+
+      {awards.map((award, index) => (
+        <article class="award-card">
+
+          <span class="award-number">
+            AWARD 0{index + 1}
+          </span>
+
+          <h2>{award.name}</h2>
+
+          <div class="title-divider"></div>
+
+          <p class="award-description">
+            {award.description}
+          </p>
+
+          <h3>Criteria</h3>
+
+          <ul class="criteria-list">
+            {award.criteria.map((criterion) => (
+              <li>{criterion}</li>
+            ))}
+          </ul>
+
+        </article>
+      ))}
+
+    </section>
+
+  </main>
+
+</Layout>
+
+<style>
+  /* PAGE */
+  .awards-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+    color: #ffffff;
+  }
+
+  /* INTRODUCTION */
+  .page-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .page-intro h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .page-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin: 1rem 0 0;
+  }
+
+  /* AWARDS GRID */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  /* AWARD CARDS */
+  .award-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+
+  .award-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .award-number {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.8rem;
+  }
+
+  .award-card h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    line-height: 1.3;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  /* DIVIDER */
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: #ffffff;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+  }
+
+  /* DESCRIPTION */
+  .award-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1.5rem;
+  }
+
+  /* CRITERIA */
+  .award-card h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    color: #ffffff;
+  }
+
+  .criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .criteria-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 0.3rem;
+  }
+
+  .criteria-list li::marker {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* TABLET */
+  @media (max-width: 950px) {
+    .awards-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 650px) {
+    .awards-page {
+      width: 90%;
+      padding: 3rem 0 4rem;
+    }
+
+    .awards-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .award-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</Layout>
