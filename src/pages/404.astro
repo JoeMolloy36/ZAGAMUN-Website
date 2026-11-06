@@ -4,63 +4,117 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Page Not Found">
-  <main class="not-found">
-    <div class="error-code">404</div>
 
-    <h1>Page Not Found</h1>
+  <main class="not-found-page">
 
-    <p>
-      Sorry, the page you are looking for doesn't exist
-      or may have been moved.
-    </p>
+    <div class="not-found-banner">
 
-    <a href="/" class="home-button">Return Home</a>
+      <span class="section-label">ZAGAMUN 2026</span>
+
+      <div class="error-code">404</div>
+
+      <h1>Page Not Found</h1>
+
+      <div class="title-divider"></div>
+
+      <p>
+        Sorry, the page you are looking for doesn't exist
+        or may have been moved.
+      </p>
+
+      <a href="/" class="home-button">Return Home</a>
+
+    </div>
+
   </main>
+
 </Layout>
 
 <style>
-  .not-found {
-    min-height: 65vh;
+  .not-found-page {
+    min-height: 75vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     padding: 3rem 1.5rem;
+    color: #ffffff;
+  }
+
+  .not-found-banner {
+    width: 100%;
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 3.5rem 3rem;
+    text-align: center;
+  }
+
+  .section-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
   }
 
   .error-code {
-    font-size: clamp(5rem, 15vw, 9rem);
+    font-size: clamp(5rem, 15vw, 8rem);
     font-weight: 800;
-    color: var(--accent-color);
     line-height: 1;
-    margin-bottom: 1rem;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
   }
 
-  .not-found h1 {
-    margin: 0 0 1rem;
-    color: var(--text-color);
+  .not-found-banner h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
   }
 
-  .not-found p {
-    max-width: 450px;
-    line-height: 1.7;
-    color: var(--muted-color);
-    margin-bottom: 2rem;
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: #ffffff;
+    margin: 1.5rem auto;
+    border-radius: 5px;
+  }
+
+  .not-found-banner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 2rem;
   }
 
   .home-button {
     display: inline-block;
     padding: 0.85rem 1.6rem;
-    background: var(--accent-color);
-    color: white;
-    text-decoration: none;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
     font-weight: 600;
-    transition: opacity 0.2s;
+    transition: background 0.2s, border-color 0.2s;
   }
 
   .home-button:hover {
-    opacity: 0.85;
+    background: rgba(255, 255, 255, 0.22);
+    border-color: #ffffff;
+  }
+
+  @media (max-width: 700px) {
+    .not-found-page {
+      min-height: 70vh;
+      padding: 2rem 1.25rem;
+    }
+
+    .not-found-banner {
+      padding: 2.5rem 1.5rem;
+    }
   }
 </style>
