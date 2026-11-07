@@ -35,10 +35,23 @@ const delegations = lines
       </p>
     </section>
 
+    <div class="search-container">
+  <input
+    type="search"
+    id="delegation-search"
+    placeholder="Search countries or schools..."
+    aria-label="Search countries or schools"
+  />
+</div>
+
     <section class="delegation-list">
 
       {delegations.map((delegation) => (
-        <div class="delegation-row">
+       <div
+  class="delegation-row"
+  data-country={delegation.country}
+  data-school={delegation.school}
+>
           <span class="country">{delegation.country}</span>
           <span class="school">{delegation.school}</span>
         </div>
@@ -142,4 +155,60 @@ const delegations = lines
       font-size: 0.85rem;
     }
   }
+
+  .search-container {
+  margin-bottom: 1.5rem;
+}
+
+.search-container input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.search-container input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
 </style>
+
+<script>
+  const searchInput = document.querySelector<HTMLInputElement>(
+    "#delegation-search"
+  );
+
+  const delegationRows = document.querySelectorAll<HTMLElement>(
+    ".delegation-row"
+  );
+
+  searchInput?.addEventListener("input", () => {
+    const search = searchInput.value.toLowerCase().trim();
+
+    delegationRows.forEach((row) => {
+      const country = row.dataset.country?.toLowerCase() ?? "";
+      const school = row.dataset.school?.toLowerCase() ?? "";
+
+      const matches =
+        country.includes(search) || school.includes(search);
+
+      row.style.display = matches ? "flex" : "none";
+    });
+  });
+</script>
