@@ -1,50 +1,117 @@
 
 ---
 import Layout from "../layouts/Layout.astro";
+
+const teamMembers = [
+  {
+    name: "Joe Molloy",
+    role: "Secretary General",
+    image: "/images/team/joe-molloy.jpg"
+  },
+  {
+    name: "Max Kelly Bowen",
+    role: "Deputy Secretary General - Head Chair - Social & Humanitarian",
+    image: "/images/team/max-kelly-bowen.jpg"
+  },
+  {
+    name: "Johnny Cunnane",
+    role: "President of General Assembly",
+    image: "/images/team/johnny-cunnane.jpg"
+  },
+  {
+    name: "Mark Conway",
+    role: "President of The Security Council",
+    image: "/images/team/mark-goonway.jpg"
+  },
+  {
+    name: "Jamie Cass",
+    role: "Head Chair - Disarmament & International Security",
+    image: "/images/team/jamie-cass.jpg"
+  },
+ {
+    name: "Oscar MacCallum",
+    role: "Head Chair - Health & Youth",
+    image: "/images/team/oscar-maccallum.jpg"
+  },
+ {
+    name: "Daniel Cahill",
+    role: "Head Chair - Special Politics & Decolonisation",
+    image: "/images/team/daniel-cahill.jpg"
+  },
+ {
+    name: "Hugh Quinlan",
+    role: "Head Chair - Economics & Finance",
+    image: "/images/team/hugh-quinlan.jpg"
+  },
+ {
+    name: "Jamie Flannery",
+    role: "Head Chair - Ecology & Environment",
+    image: "/images/team/jamie-flannery.jpg"
+  }
+
+
+  // Add more team members here
+];
 ---
 
-<Layout title="ZAGAMUN Team">
+<Layout title="Meet the Team">
 
-  <main class="placeholder-page">
+  <main class="team-page">
 
-    <div class="placeholder-banner">
+    <section class="page-intro">
       <span class="section-label">ZAGAMUN 2026</span>
-
-      <h1>ZAGAMUN Team Info will be available shortly</h1>
-
-      <div class="title-divider"></div>
-
+      <h1>Meet the Team</h1>
       <p>
-        Please check back soon to view the ZAGAMUN team info.
+        Meet the team behind ZAGAMUN 2026
       </p>
-    </div>
+    </section>
+
+    <section class="team-grid">
+
+      {teamMembers.map((member) => (
+        <article class="team-card">
+
+          <div class="member-image">
+            <img
+              src={member.image}
+              alt={`Photo Missing, Check Back Shortly`}
+              loading="lazy"
+            />
+          </div>
+
+          <div class="member-info">
+            <h2>{member.name}</h2>
+
+            <div class="title-divider"></div>
+
+            <p>{member.role}</p>
+          </div>
+
+        </article>
+      ))}
+
+    </section>
 
   </main>
 
 </Layout>
 
 <style>
-  .placeholder-page {
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
+  /* PAGE */
+  .team-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
     color: #ffffff;
   }
 
-  .placeholder-banner {
-    width: 100%;
-    max-width: 850px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 3.5rem 3rem;
-    text-align: center;
+  /* INTRODUCTION */
+  .page-intro {
+    margin-bottom: 2.5rem;
   }
 
   .section-label {
-    display: block;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 3px;
@@ -52,36 +119,134 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 1rem;
   }
 
-  .placeholder-banner h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+  .page-intro h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.2;
     margin: 0;
     color: #ffffff;
   }
 
+  .page-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin: 1rem 0 0;
+  }
+
+  /* TEAM GRID */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  /* TEAM CARDS */
+  .team-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .team-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    transform: translateY(-4px);
+  }
+
+  /* MEMBER IMAGE */
+  .member-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* MEMBER INFORMATION */
+  .member-info {
+    padding: 1.8rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .member-info h2 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.3;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  /* DIVIDER */
   .title-divider {
-    width: 65px;
+    width: 55px;
     height: 3px;
     background: #ffffff;
-    margin: 1.5rem auto;
+    margin: 1.1rem 0;
     border-radius: 5px;
   }
 
-  .placeholder-banner p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+  /* ROLE */
+  .member-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
   }
 
-  @media (max-width: 700px) {
-    .placeholder-page {
-      min-height: 70vh;
-      padding: 2rem 1.25rem;
+  /* TABLET */
+  @media (max-width: 950px) {
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 650px) {
+    .team-page {
+      width: 90%;
+      padding: 3rem 0 4rem;
     }
 
-    .placeholder-banner {
-      padding: 2.5rem 1.5rem;
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .member-info {
+      padding: 1.2rem 0.8rem 1.5rem;
+    }
+
+    .member-info h2 {
+      font-size: 1.1rem;
+    }
+
+    .member-info p {
+      font-size: 0.85rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+  }
+
+  /* SMALL MOBILE */
+  @media (max-width: 380px) {
+    .team-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
+</Layout>
