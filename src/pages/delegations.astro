@@ -1,26 +1,27 @@
 
+
 ---
 import Layout from "../layouts/Layout.astro";
+import { readFileSync } from "node:fs";
+import Papa from "papaparse";
 
-const response = await fetch(
-  new URL("/delegations.csv", Astro.url.origin)
+const csvText = readFileSync(
+  new URL("../data/delegations.csv", import.meta.url),
+  "utf-8"
 );
 
-const csvText = await response.text();
+const parsed = Papa.parse(csvText, {
+  header: true,
+  skipEmptyLines: true,
+  transformHeader: (header) => header.trim(),
+  transform: (value) => value.trim()
+});
 
-const delegations = csvText
-  .trim()
-  .split("\n")
-  .slice(1)
-  .map((line) => {
-    const [country, school] = line.split(",");
-    return {
-      country: country.trim(),
-      school: school.trim()
-    };
-  })
-  .sort((a, b) => a.country.localeCompare(b.country));
+const delegations = parsed.data
+  .filter((row) => row.Country && row.School)
+  .sort((a, b) => a.Country.localeCompare(b.Country));
 ---
+
 
 <Layout title="Delegations by School">
   <main class="page-container">
