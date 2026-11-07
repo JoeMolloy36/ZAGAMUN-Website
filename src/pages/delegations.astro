@@ -1,87 +1,92 @@
 
 ---
 import Layout from "../layouts/Layout.astro";
+
+const response = await fetch(
+  new URL("/delegations.csv", Astro.url.origin)
+);
+
+const csvText = await response.text();
+
+const delegations = csvText
+  .trim()
+  .split("\n")
+  .slice(1)
+  .map((line) => {
+    const [country, school] = line.split(",");
+    return {
+      country: country.trim(),
+      school: school.trim()
+    };
+  })
+  .sort((a, b) => a.country.localeCompare(b.country));
 ---
 
-<Layout title="Delegations">
+<Layout title="Delegations by School">
+  <main class="page-container">
+    <h1>Delegations by School</h1>
+    <p class="subtitle">
+      View the assigned school for each country delegation.
+    </p>
 
-  <main class="placeholder-page">
-
-    <div class="placeholder-banner">
-      <span class="section-label">ZAGAMUN 2026</span>
-
-      <h1>Delegations will be available shortly</h1>
-
-      <div class="title-divider"></div>
-
-      <p>
-        Please check back soon once delegations have been released.
-      </p>
+    <div class="delegation-list">
+      {delegations.map((delegation) => (
+        <div class="delegation-row">
+          <span class="country">{delegation.country}</span>
+          <span class="school">{delegation.school}</span>
+        </div>
+      ))}
     </div>
-
   </main>
-
 </Layout>
 
 <style>
-  .placeholder-page {
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
-    color: #ffffff;
-  }
-
-  .placeholder-banner {
-    width: 100%;
+  .page-container {
     max-width: 850px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 3.5rem 3rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  h1 {
     text-align: center;
+    margin-bottom: 0.5rem;
   }
 
-  .section-label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    color: #ffffff;
-    margin-bottom: 1rem;
+  .subtitle {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    opacity: 0.75;
   }
 
-  .placeholder-banner h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    line-height: 1.2;
-    margin: 0;
-    color: #ffffff;
+  .delegation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
   }
 
-  .title-divider {
-    width: 65px;
-    height: 3px;
-    background: #ffffff;
-    margin: 1.5rem auto;
-    border-radius: 5px;
+  .delegation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
   }
 
-  .placeholder-banner p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0;
+  .country {
+    font-weight: 700;
   }
 
-  @media (max-width: 700px) {
-    .placeholder-page {
-      min-height: 70vh;
-      padding: 2rem 1.25rem;
-    }
+  .school {
+    text-align: right;
+    opacity: 0.8;
+  }
 
-    .placeholder-banner {
-      padding: 2.5rem 1.5rem;
+  @media (max-width: 500px) {
+    .delegation-row {
+      padding: 0.85rem;
     }
   }
 </style>
