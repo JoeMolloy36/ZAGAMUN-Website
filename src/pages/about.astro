@@ -5,46 +5,71 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="About">
 
-  <main class="placeholder-page">
+  <main class="about-page">
 
-    <div class="placeholder-banner">
+    <section class="page-intro">
       <span class="section-label">ZAGAMUN 2026</span>
-
-      <h1>Info will be updated shortly</h1>
-
-      <div class="title-divider"></div>
-
+      <h1>About ZAGAMUN</h1>
       <p>
-        Please check back soon for further information about the conference.
+        Discover more about our conference and what makes ZAGAMUN
+        a unique opportunity for students across Dublin.
       </p>
-    </div>
+    </section>
+
+    <section class="about-section">
+
+      <div class="about-content">
+        <h2>Who We Are</h2>
+
+        <div class="title-divider"></div>
+
+        <p>
+          Five hundred years ago, the Jesuit order thought of, wrote about, and argued for an idea. The concept that a special emphasis on rhetoric, humanity, and leadership, in the education of the young today, would have a profoundly beneficial effect on the society of tomorrow. Five centuries later, the ideas and thoughts born from this aspiration, still continue to reshape our world. Five centuries later, the ability to think independently, to speak one’s mind clearly, and concisely, and to successfully work with those around you, is still a hallmark of leadership, and leaders with the willingness to do what is right.
+        </p>
+
+        <p>
+          It is our enduring hope, that ZAGAMUN may flourish as a home of independent thought and collaboration. Particularly in an ever more unstable, unpredictable world, that seems to value the ability to compromise and collaborate less and less. So, here is how we work:
+        </p>
+
+        <p>
+          ZAGAMUN is a Model United Nations conference, based in and run by the students and staff of Gonzaga College SJ. We welcome schools from all across Leinster, to productively debate on the most pressing topics of the world today. We consider ourself a home to both the experienced, and the first-time delegate. And hope for a bit of fun, and friendship building along the way. This is why on behalf of the ZAGAMUN team, we ask for the utmost respect from everyone, for everyone. 
+        </p>
+
+        <p>
+          Because ideas, politely and articulately expressed, can change the world.
+        </p>
+
+      </div>
+
+      <div class="about-image">
+        <img
+          src="/about.jpg"
+          alt="Delegates participating in a ZAGAMUN conference"
+        />
+      </div>
+
+    </section>
 
   </main>
 
 </Layout>
 
 <style>
-  .placeholder-page {
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
+  /* PAGE */
+  .about-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
     color: #ffffff;
   }
 
-  .placeholder-banner {
-    width: 100%;
-    max-width: 850px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 3.5rem 3rem;
-    text-align: center;
+  /* INTRODUCTION */
+  .page-intro {
+    margin-bottom: 2.5rem;
   }
 
   .section-label {
-    display: block;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 3px;
@@ -52,9 +77,36 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 1rem;
   }
 
-  .placeholder-banner h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+  .page-intro h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .page-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin: 1rem 0 0;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+
+  /* TEXT */
+  .about-content h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.3;
     margin: 0;
     color: #ffffff;
   }
@@ -63,25 +115,74 @@ import Layout from "../layouts/Layout.astro";
     width: 65px;
     height: 3px;
     background: #ffffff;
-    margin: 1.5rem auto;
+    margin: 1.5rem 0;
     border-radius: 5px;
   }
 
-  .placeholder-banner p {
-    font-size: 1.1rem;
+  .about-content p {
+    font-size: 1rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1.2rem;
   }
 
-  @media (max-width: 700px) {
-    .placeholder-page {
-      min-height: 70vh;
-      padding: 2rem 1.25rem;
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* IMAGE */
+  .about-image {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* TABLET */
+  @media (max-width: 850px) {
+    .about-section {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .placeholder-banner {
-      padding: 2.5rem 1.5rem;
+    .about-image {
+      min-height: 300px;
+    }
+
+    .about-image img {
+      min-height: 300px;
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 650px) {
+    .about-page {
+      width: 90%;
+      padding: 3rem 0 4rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+
+    .about-section {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .about-image,
+    .about-image img {
+      min-height: 230px;
     }
   }
 </style>
+</Layout>
