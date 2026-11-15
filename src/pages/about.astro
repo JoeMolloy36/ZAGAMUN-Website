@@ -7,32 +7,57 @@ import Layout from "../layouts/Layout.astro";
 
   <main class="about-page">
 
+    <!-- PAGE INTRO -->
     <section class="page-intro">
       <span class="section-label">ZAGAMUN 2026</span>
       <h1>About Gonzaga College MUN</h1>
       <div class="title-divider"></div>
     </section>
 
+    <!-- OPENING STATEMENT -->
+    <section class="opening-section">
+      <p>
+        Five hundred years ago, the Jesuit order thought of, wrote about,
+        and argued for an idea. The concept that a special emphasis on
+        rhetoric, humanity, and leadership, in the education of the young
+        today, would have a profoundly beneficial effect on the society
+        of tomorrow. Five centuries later, the ideas and thoughts born
+        from this aspiration, still continue to reshape our world.
+        Five centuries later, the ability to think independently, to
+        speak one’s mind clearly, and concisely, and to successfully work
+        with those around you, is still a hallmark of leadership, and
+        leaders with the willingness to do what is right.
+      </p>
+    </section>
+
+    <!-- CONFERENCE INFORMATION -->
     <section class="about-section">
 
       <div class="about-content">
-        
-        
+
+        <span class="section-label">OUR CONFERENCE</span>
+
+        <h2>A Home for Independent Thought</h2>
+
+        <div class="title-divider"></div>
 
         <p>
-          Five hundred years ago, the Jesuit order thought of, wrote about, and argued for an idea. The concept that a special emphasis on rhetoric, humanity, and leadership, in the education of the young today, would have a profoundly beneficial effect on the society of tomorrow. Five centuries later, the ideas and thoughts born from this aspiration, still continue to reshape our world. Five centuries later, the ability to think independently, to speak one’s mind clearly, and concisely, and to successfully work with those around you, is still a hallmark of leadership, and leaders with the willingness to do what is right.
+          It is our enduring hope, that ZAGAMUN may flourish as a home
+          of independent thought and collaboration. Particularly in
+          an ever more unstable, unpredictable world, that seems to
+          value the ability to compromise and collaborate less and less.
+          So, here is how we work:
         </p>
 
         <p>
-          It is our enduring hope, that ZAGAMUN may flourish as a home of independent thought and collaboration. Particularly in an ever more unstable, unpredictable world, that seems to value the ability to compromise and collaborate less and less. So, here is how we work:
-        </p>
-
-        <p>
-          ZAGAMUN is a Model United Nations conference, based in and run by the students and staff of Gonzaga College SJ. We welcome schools from all across Leinster, to productively debate on the most pressing topics of the world today. We consider ourself a home to both the experienced, and the first-time delegate. And hope for a bit of fun, and friendship building along the way. This is why on behalf of the ZAGAMUN team, we ask for the utmost respect from everyone, for everyone. 
-        </p>
-
-        <p>
-          Because ideas, politely and articulately expressed, can change the world.
+          ZAGAMUN is a Model United Nations conference, based in and run
+          by the students and staff of Gonzaga College SJ. We welcome
+          schools from all across Leinster, to productively debate on
+          the most pressing topics of the world today. We consider
+          ourself a home to both the experienced, and the first-time
+          delegate. And hope for a bit of fun, and friendship building
+          along the way. This is why on behalf of the ZAGAMUN team,
+          we ask for the utmost respect from everyone, for everyone.
         </p>
 
       </div>
@@ -40,9 +65,23 @@ import Layout from "../layouts/Layout.astro";
       <div class="about-image">
         <img
           src="/about.jpg"
-          alt="missing image"
+          alt="Delegates at a Model United Nations conference"
         />
       </div>
+
+    </section>
+
+    <!-- CLOSING STATEMENT -->
+    <section class="closing-section">
+
+      <div class="closing-divider"></div>
+
+      <p>
+        Because ideas, politely and articulately expressed,
+        can change the world.
+      </p>
+
+      <div class="closing-divider"></div>
 
     </section>
 
@@ -51,6 +90,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+
   /* PAGE */
   .about-page {
     width: 90%;
@@ -60,7 +100,7 @@ import Layout from "../layouts/Layout.astro";
     color: #ffffff;
   }
 
-  /* INTRODUCTION */
+  /* PAGE INTRO */
   .page-intro {
     margin-bottom: 2.5rem;
   }
@@ -70,40 +110,12 @@ import Layout from "../layouts/Layout.astro";
     font-weight: bold;
     letter-spacing: 3px;
     color: #ffffff;
-    margin-bottom: 1rem;
   }
 
   .page-intro h1 {
     font-size: clamp(2rem, 4vw, 2.8rem);
     line-height: 1.2;
-    margin: 0;
-    color: #ffffff;
-  }
-
-  .page-intro p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #ffffff;
-    margin: 1rem 0 0;
-  }
-
-  /* ABOUT SECTION */
-  .about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 2.5rem;
-  }
-
-  /* TEXT */
-  .about-content h2 {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    line-height: 1.3;
-    margin: 0;
+    margin: 0.5rem 0 0;
     color: #ffffff;
   }
 
@@ -115,54 +127,108 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 5px;
   }
 
-  .about-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 1.2rem;
+  /* OPENING STATEMENT */
+  .opening-section {
+    max-width: 1000px;
+    margin: 0 auto 3.5rem;
+    padding: 2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
   }
 
-  .about-content p:last-child {
-    margin-bottom: 0;
+  .opening-section p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+  }
+
+  /* MAIN CONTENT */
+  .about-section {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: start;
+    padding: 1rem 0;
+  }
+
+  /* TEXT */
+  .about-content h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.3;
+    margin: 0.7rem 0 0;
+    color: #ffffff;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1.3rem;
   }
 
   /* IMAGE */
   .about-image {
     width: 100%;
-    height: 100%;
-    min-height: 380px;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 16px;
+    position: sticky;
+    top: 110px;
   }
 
   .about-image img {
     width: 100%;
     height: 100%;
-    min-height: 380px;
     object-fit: cover;
     display: block;
   }
 
+  /* CLOSING STATEMENT */
+  .closing-section {
+    max-width: 850px;
+    margin: 4rem auto 0;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .closing-divider {
+    width: 65px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0 auto 2rem;
+    border-radius: 5px;
+  }
+
+  .closing-section p {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.5;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 2rem;
+  }
+
   /* TABLET */
   @media (max-width: 850px) {
+
     .about-section {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
 
     .about-image {
-      min-height: 300px;
+      position: relative;
+      top: auto;
+      aspect-ratio: 16 / 9;
     }
 
-    .about-image img {
-      min-height: 300px;
-    }
   }
 
   /* MOBILE */
   @media (max-width: 650px) {
+
     .about-page {
-      width: 90%;
       padding: 3rem 0 4rem;
     }
 
@@ -170,15 +236,28 @@ import Layout from "../layouts/Layout.astro";
       font-size: 2rem;
     }
 
-    .about-section {
+    .opening-section {
       padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .opening-section p {
+      font-size: 1rem;
+    }
+
+    .about-section {
       gap: 1.5rem;
     }
 
-    .about-image,
-    .about-image img {
-      min-height: 230px;
+    .about-image {
+      aspect-ratio: 4 / 3;
     }
+
+    .closing-section {
+      margin-top: 2rem;
+    }
+
   }
+
 </style>
 </Layout>
