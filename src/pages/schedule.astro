@@ -5,83 +5,179 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Schedule">
 
-  <main class="placeholder-page">
+  <main class="schedule-page">
 
-    <div class="placeholder-banner">
-      <span class="section-label">ZAGAMUN 2026</span>
-
-      <h1>Schedule will be available shortly</h1>
-
-      <div class="title-divider"></div>
-
+    <section class="page-intro">
+      <h1>Conference Schedule</h1>
       <p>
-        Please check back soon once schedule has been released.
+        The schedule for ZAGAMUN 2026. We look forward to welcoming
+        delegates on Friday 27th and Saturday 28th November.
       </p>
-    </div>
+    </section>
+
+    <section class="schedule-grid">
+
+      <!-- FRIDAY -->
+      <div class="day-box">
+        <h2>Friday 27th</h2>
+
+        <div class="schedule-item">
+          <span class="time">4:30–5:00</span>
+          <span class="event">Registration + Lobbying</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">4:45</span>
+          <span class="event">Co-Chair Meeting</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">5:00–5:30</span>
+          <span class="event">Opening Ceremony</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">5:30–6:00</span>
+          <span class="event">Dinner</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">6:00–8:45</span>
+          <span class="event">Committee</span>
+        </div>
+
+      </div>
+
+      <!-- SATURDAY -->
+      <div class="day-box">
+        <h2>Saturday 28th</h2>
+
+        <div class="schedule-item">
+          <span class="time">9:00–12:30</span>
+          <span class="event">Committee</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">12:30–1:00</span>
+          <span class="event">Lunch</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">1:00–4:00</span>
+          <span class="event">GA</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">4:15–4:45</span>
+          <span class="event">Closing Ceremony</span>
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
 </Layout>
 
 <style>
-  .placeholder-page {
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
-    color: #ffffff;
+
+  .schedule-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
   }
 
-  .placeholder-banner {
-    width: 100%;
-    max-width: 850px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    padding: 3.5rem 3rem;
+  .page-intro {
+    background: #e8eee9;
+    color: #244638;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 30px;
     text-align: center;
   }
 
-  .section-label {
-    display: block;
-    font-size: 0.8rem;
+  .page-intro h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .page-intro p {
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    align-items: stretch;
+  }
+
+  .day-box {
+    background: #e8eee9;
+    color: #244638;
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .day-box h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #b6c8ba;
+  }
+
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    align-items: center;
+    padding: 18px 12px;
+    border-bottom: 1px solid #b6c8ba;
+    line-height: 1.5;
+  }
+
+  .schedule-item:last-child {
+    border-bottom: none;
+  }
+
+  .time {
     font-weight: bold;
-    letter-spacing: 3px;
-    color: #ffffff;
-    margin-bottom: 1rem;
+    white-space: nowrap;
   }
 
-  .placeholder-banner h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    line-height: 1.2;
-    margin: 0;
-    color: #ffffff;
+  .event {
+    font-weight: 500;
   }
 
-  .title-divider {
-    width: 65px;
-    height: 3px;
-    background: #ffffff;
-    margin: 1.5rem auto;
-    border-radius: 5px;
-  }
+  @media (max-width: 750px) {
 
-  .placeholder-banner p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0;
-  }
-
-  @media (max-width: 700px) {
-    .placeholder-page {
-      min-height: 70vh;
-      padding: 2rem 1.25rem;
+    .schedule-grid {
+      grid-template-columns: 1fr;
     }
 
-    .placeholder-banner {
-      padding: 2.5rem 1.5rem;
+    .schedule-page {
+      padding: 25px 15px 40px;
     }
+
+    .day-box {
+      padding: 20px;
+    }
+
+    .schedule-item {
+      grid-template-columns: 105px 1fr;
+      gap: 10px;
+      padding: 16px 8px;
+    }
+
+    .page-intro {
+      padding: 25px 20px;
+    }
+
   }
+
 </style>
