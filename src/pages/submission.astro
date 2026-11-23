@@ -1,1 +1,135 @@
 
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Resolution Submission">
+  <main class="rules-page">
+    <section class="intro">
+      <p class="section-label">ZAGAMUN 2026</p>
+      <h1>Resolution Submission</h1>
+      <div class="title-divider"></div>
+    </section>
+
+    <section class="procedure-card">
+      <h2>Resolution Formatting</h2>
+      <div class="card-divider"></div>
+
+      <p>
+        All resolutions must be submitted as a <strong>PDF document</strong>
+        and formatted according to the following guidelines:
+      </p>
+
+      <ul>
+        <li><strong>Font size:</strong> 12 pt throughout the document.</li>
+        <li><strong>File format:</strong> PDF only.</li>
+        <li><strong>Heading:</strong> Your resolution must include a clear heading identifying your committee, country and topic.</li>
+      </ul>
+
+      <p>
+        Please ensure your resolution is correctly formatted before submitting.
+      </p>
+
+      <div class="card-divider"></div>
+
+      <h2>Submission Emails</h2>
+
+      <p>
+        Resolutions should be sent to the email address corresponding to your committee:
+      </p>
+
+      <ul>
+        <li><strong>Disarmament & International Security:</strong> [Email address]</li>
+        <li><strong>Social & Humanitarian:</strong> [Email address]</li>
+        <li><strong>Ecology & Environment:</strong> [Email address]</li>
+      </ul>
+
+      <p>
+        Please use your country name and committee as the subject of your email.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .rules-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+    color: white;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0;
+  }
+
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .procedure-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: left;
+  }
+
+  .procedure-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0;
+  }
+
+  .card-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .procedure-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .procedure-card ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .procedure-card li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .rules-page {
+      padding: 3rem 0 4rem;
+    }
+
+    .procedure-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
