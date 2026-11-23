@@ -12,54 +12,56 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="procedure-card">
-       <h2>Submission Deadline</h2>
-      <div class="card-divider"></div>
+      <div class="submission-section">
+        <h2>Submission Deadline</h2>
+        <div class="card-divider"></div>
 
-      <p>
-        All resolutions must be submitted prior to 21:00 on Thursday night. 
-      </p>
+        <p>
+          All resolutions must be submitted prior to 21:00 on Thursday night.
+        </p>
+      </div>
 
-       <div class="card-divider"></div>
+      <div class="submission-section">
+        <h2>Formatting</h2>
+        <div class="card-divider"></div>
 
+        <p>
+          All resolutions must be formatted according to the following guidelines:
+        </p>
 
-      <h2>Formatting</h2>
-      <div class="card-divider"></div>
+        <ul>
+          <li><span class="highlight">Font size:</span> 12 pt throughout the document.</li>
+          <li><span class="highlight">File format:</span> PDF</li>
+          <li><span class="highlight">Heading:</span> Your resolution must include a clear heading identifying your committee, country and topic.</li>
+        </ul>
 
-      <p>
-        All resolutions must be formatted according to the following guidelines:
-      </p>
+        <p>
+          Please ensure your resolution is correctly formatted before submitting.
+        </p>
+      </div>
 
-      <ul>
-        <li><strong>Font size:</strong> 12 pt throughout the document.</li>
-        <li><strong>File format:</strong> PDF</li>
-        <li><strong>Heading:</strong> Your resolution must include a clear heading identifying your committee, country and topic.</li>
-      </ul>
+      <div class="submission-section">
+        <h2>Submission Emails</h2>
+        <div class="card-divider"></div>
 
-      <p>
-        Please ensure your resolution is correctly formatted before submitting.
-      </p>
+        <p>
+          Resolutions should be sent to the email address corresponding to your committee:
+        </p>
 
-      <div class="card-divider"></div>
+        <ul>
+          <li><span class="highlight">Disarmament & International Security:</span> disec.zagamun@gmail.com</li>
+          <li><span class="highlight">Social & Humanitarian:</span> sochum.zagamun@gmail.com</li>
+          <li><span class="highlight">Ecology & Environment:</span> eande.zagamun@gmail.com</li>
+          <li><span class="highlight">Economics & Finance:</span> ecofin.zagamun@gmail.com</li>
+          <li><span class="highlight">Special Politics & Decolonisation:</span> specpol.zagamun@gmail.com</li>
+          <li><span class="highlight">Health & Youth:</span> handy.zagamun@gmail.com</li>
+          <li><span class="highlight">Security Council:</span> sc.zagamun@gmail.com</li>
+        </ul>
 
-      <h2>Submission Emails</h2>
-
-      <p>
-        Resolutions should be sent to the email address corresponding to your committee:
-      </p>
-
-      <ul>
-        <li><strong>Disarmament & International Security:</strong> disec.zagamun@gmail.com</li>
-        <li><strong>Social & Humanitarian:</strong> sochum.zagamun@gmail.com</li>
-        <li><strong>Ecology & Environment:</strong> eande.zagamun@gmail.com</li>
-        <li><strong>Economics & Finance:</strong> ecofin.zagamun@gmail.com</li>
-        <li><strong>Special Politics & Decolonisation:</strong> specpol.zagamun@gmail.com</li>
-        <li><strong>Health & Youth:</strong> handy.zagamun@gmail.com</li>
-        <li><strong>Security Council:</strong> sc.zagamun@gmail.com</li>
-      </ul>
-
-      <p>
-        Please use your country name and committee as the subject of your email.
-      </p>
+        <p>
+          Please use your country name and committee as the subject of your email.
+        </p>
+      </div>
     </section>
   </main>
 </Layout>
@@ -105,6 +107,14 @@ import Layout from "../layouts/Layout.astro";
     text-align: left;
   }
 
+  .submission-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .submission-section:last-child {
+    margin-bottom: 0;
+  }
+
   .procedure-card h2 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin: 0;
@@ -132,7 +142,11 @@ import Layout from "../layouts/Layout.astro";
   .procedure-card li {
     font-size: 1.05rem;
     line-height: 1.8;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight {
+    color: #c5d9ce;
   }
 
   @media (max-width: 700px) {
@@ -143,6 +157,9 @@ import Layout from "../layouts/Layout.astro";
     .procedure-card {
       padding: 2rem 1.5rem;
     }
+
+    .submission-section {
+      margin-bottom: 2.5rem;
+    }
   }
 </style>
-
