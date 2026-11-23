@@ -1,78 +1,75 @@
 
 ---
 import Layout from "../layouts/Layout.astro";
+
+const friday = [
+  { time: "16:30–17:00", event: "Registration + Lobbying" },
+  { time: "16:45", event: "Co-Chair Meeting" },
+  { time: "17:00–17:30", event: "Opening Ceremony" },
+  { time: "17:30–18:00", event: "Dinner" },
+  { time: "18:00–20:45", event: "Committee In Session" },
+];
+
+const saturday = [
+  { time: "09:00–12:30", event: "Committee In Session" },
+  { time: "12:30–13:00", event: "Lunch" },
+  { time: "13:00–16:00", event: "General Assembly" },
+  { time: "16:15–16:45", event: "Closing Ceremony" },
+];
 ---
 
 <Layout title="Schedule">
 
   <main class="schedule-page">
 
+    <!-- PAGE INTRO -->
     <section class="page-intro">
+      <span class="section-label">ZAGAMUN 2026</span>
       <h1>Conference Schedule</h1>
       <p>
-        The schedule for ZAGAMUN 2026. We look forward to welcoming
-        delegates on Friday 27th and Saturday 28th November.
+        Below is the schedule for ZAGAMUN 2026, taking place on Friday 27th
+        and Saturday 28th November.
       </p>
     </section>
 
+    <!-- SCHEDULE -->
     <section class="schedule-grid">
 
       <!-- FRIDAY -->
-      <div class="day-box">
+      <article class="day-card">
+
         <h2>Friday 27th</h2>
 
-        <div class="schedule-item">
-          <span class="time">4:30–5:00</span>
-          <span class="event">Registration + Lobbying</span>
+        <div class="title-divider"></div>
+
+        <div class="schedule-list">
+          {friday.map((item) => (
+            <div class="schedule-item">
+              <span class="time">{item.time}</span>
+              <span class="event">{item.event}</span>
+            </div>
+          ))}
         </div>
 
-        <div class="schedule-item">
-          <span class="time">4:45</span>
-          <span class="event">Co-Chair Meeting</span>
-        </div>
-
-        <div class="schedule-item">
-          <span class="time">5:00–5:30</span>
-          <span class="event">Opening Ceremony</span>
-        </div>
-
-        <div class="schedule-item">
-          <span class="time">5:30–6:00</span>
-          <span class="event">Dinner</span>
-        </div>
-
-        <div class="schedule-item">
-          <span class="time">6:00–8:45</span>
-          <span class="event">Committee</span>
-        </div>
-
-      </div>
+      </article>
 
       <!-- SATURDAY -->
-      <div class="day-box">
+      <article class="day-card">
+
         <h2>Saturday 28th</h2>
 
-        <div class="schedule-item">
-          <span class="time">9:00–12:30</span>
-          <span class="event">Committee</span>
+        <div class="title-divider"></div>
+
+        <div class="schedule-list">
+          {saturday.map((item) => (
+            <div class="schedule-item">
+              <span class="time">{item.time}</span>
+              <span class="event">{item.event}</span>
+            </div>
+          ))}
         </div>
 
-        <div class="schedule-item">
-          <span class="time">12:30–1:00</span>
-          <span class="event">Lunch</span>
-        </div>
-
-        <div class="schedule-item">
-          <span class="time">1:00–4:00</span>
-          <span class="event">GA</span>
-        </div>
-
-        <div class="schedule-item">
-          <span class="time">4:15–4:45</span>
-          <span class="event">Closing Ceremony</span>
-        </div>
-
-      </div>
+      </article>
 
     </section>
 
@@ -82,63 +79,95 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
 
+  /* PAGE */
   .schedule-page {
-    width: 100%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1150px;
     margin: 0 auto;
-    padding: 40px 20px 60px;
+    padding: 5rem 0 6rem;
+    color: #ffffff;
   }
 
+  /* INTRODUCTION */
   .page-intro {
-    background: #e8eee9;
-    color: #244638;
-    border-radius: 20px;
-    padding: 35px;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 1rem;
   }
 
   .page-intro h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    margin: 0;
+    color: #ffffff;
   }
 
   .page-intro p {
-    max-width: 750px;
-    margin: 0 auto;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin: 1rem 0 0;
   }
 
+  /* SCHEDULE GRID */
   .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
     align-items: stretch;
   }
 
-  .day-box {
-    background: #e8eee9;
-    color: #244638;
-    border-radius: 20px;
-    padding: 30px;
+  /* DAY CARDS */
+  .day-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: background 0.2s ease;
   }
 
-  .day-box h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #b6c8ba;
+  .day-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .day-card h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    line-height: 1.3;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  /* DIVIDER */
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: #ffffff;
+    margin: 1.5rem 0;
+    border-radius: 5px;
+  }
+
+  /* SCHEDULE ITEMS */
+  .schedule-list {
+    display: flex;
+    flex-direction: column;
   }
 
   .schedule-item {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 15px;
-    align-items: center;
-    padding: 18px 12px;
-    border-bottom: 1px solid #b6c8ba;
-    line-height: 1.5;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .schedule-item:last-child {
@@ -146,38 +175,52 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .time {
+    font-size: 0.95rem;
     font-weight: bold;
-    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .event {
-    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
   }
 
-  @media (max-width: 750px) {
-
+  /* TABLET */
+  @media (max-width: 950px) {
     .schedule-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* MOBILE */
+  @media (max-width: 650px) {
 
     .schedule-page {
-      padding: 25px 15px 40px;
+      width: 90%;
+      padding: 3rem 0 4rem;
     }
 
-    .day-box {
-      padding: 20px;
+    .schedule-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .day-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
     }
 
     .schedule-item {
-      grid-template-columns: 105px 1fr;
-      gap: 10px;
-      padding: 16px 8px;
-    }
-
-    .page-intro {
-      padding: 25px 20px;
+      grid-template-columns: 105px minmax(0, 1fr);
+      gap: 0.8rem;
+      padding: 1.1rem 0;
     }
 
   }
 
 </style>
+</Layout>
