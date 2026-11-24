@@ -1,4 +1,3 @@
-
 ---
 import Layout from "../layouts/Layout.astro";
 ---
@@ -45,7 +44,6 @@ import Layout from "../layouts/Layout.astro";
             join us for a thrilling weekend of fruitful debate across our 7 committees.
           </p>
 
-          
         </div>
 
         <!-- Image -->
@@ -58,6 +56,59 @@ import Layout from "../layouts/Layout.astro";
 
       </div>
     </section>
+
+    <!-- MAPS & DIRECTIONS SECTION -->
+    <section class="maps-section">
+      <div class="maps-container">
+
+        <!-- Section heading -->
+        <div class="maps-intro">
+          <span class="section-label">VISITING ZAGAMUN</span>
+          <h2>Getting to Gonzaga</h2>
+          <div class="title-divider"></div>
+          <p>
+            Please use the maps below to find your way to Gonzaga College.
+            There are two entrances available depending on where you are arriving from.
+          </p>
+        </div>
+
+        <!-- Maps -->
+        <div class="maps-grid">
+
+          <!-- Front Entrance -->
+          <div class="map-card">
+            <div class="map-card-header">
+              <h3>Front Entrance</h3>
+              <p>From Main Street, Ranelagh</p>
+            </div>
+
+            <div class="map-card-image">
+              <img
+                src="/images/front-entrance.jpg"
+                alt="Map showing the route to the front entrance of Gonzaga College from Main Street, Ranelagh"
+              />
+            </div>
+          </div>
+
+          <!-- Back Entrance -->
+          <div class="map-card">
+            <div class="map-card-header">
+              <h3>Back Entrance</h3>
+              <p>From Cowper Luas stop</p>
+            </div>
+
+            <div class="map-card-image">
+              <img
+                src="/images/back-entrance.jpg"
+                alt="Map showing the route to the back entrance of Gonzaga College from Cowper Luas stop"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <style>
@@ -192,6 +243,76 @@ import Layout from "../layouts/Layout.astro";
       display: block;
     }
 
+    /* MAPS SECTION */
+    .maps-section {
+      padding: 2rem 2rem 6rem;
+      color: #ffffff;
+    }
+
+    .maps-container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .maps-intro {
+      margin-bottom: 2.5rem;
+    }
+
+    .maps-intro h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .maps-intro > p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 750px;
+    }
+
+    .maps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .map-card {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .map-card-header {
+      padding: 1.8rem 2rem 1rem;
+    }
+
+    .map-card-header h3 {
+      font-size: 1.6rem;
+      margin: 0 0 0.5rem;
+      color: #ffffff;
+    }
+
+    .map-card-header p {
+      font-size: 1rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .map-card-image {
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    .map-card-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
     /* MOBILE */
     @media (max-width: 700px) {
       .hero {
@@ -232,6 +353,28 @@ import Layout from "../layouts/Layout.astro";
       .description-image img {
         min-height: 250px;
         max-height: 350px;
+      }
+
+      /* MOBILE MAPS */
+      .maps-section {
+        padding: 1rem 1.25rem 3rem;
+      }
+
+      .maps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .maps-intro {
+        margin-bottom: 1.5rem;
+      }
+
+      .map-card-header {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+
+      .map-card-image {
+        padding: 0.75rem 1rem 1rem;
       }
     }
   </style>
