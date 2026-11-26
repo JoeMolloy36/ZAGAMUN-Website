@@ -1,0 +1,149 @@
+
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Crisis">
+  <main class="crisis-page">
+    <section class="intro">
+      <p class="section-label">ZAGAMUN 2026</p>
+      <h1>CRISIS!</h1>
+      <div class="title-divider"></div>
+    </section>
+
+    <section class="crisis-card">
+      <div class="crisis-section">
+        <h2>Background</h2>
+        <div class="card-divider"></div>
+
+        <p>
+       CRISIS! CRISIS! There has been a CRISIS! 
+
+Today, an Artificial Intelligence model has reached a level of super intelligence far beyond the projections of those who developed it. This model has now breached international security measures and gained full access to United Nations and International systems and databases. We are unsure of its ability, aims, and demands. All we know is that the tools humanity has created have escaped its grasp. Humanity is at stake, and you are the only ones who can save it.
+The United Nations has proposed the creation of a Crisis Committee, taking place at ZAGAMUN 2026
+We are depending on one delegate from each delegation to take action and join the crisis committee to construct an emergency resolution on the control, ownership and safety of this AI super intelligence. 
+
+The world is at risk, and delegates, it's in your hands.
+
+        </p>
+      </div>
+
+      <div class="crisis-section">
+        <h2>Video Briefing</h2>
+        <div class="card-divider"></div>
+
+        <p>
+          Watch the video briefing below for further context on the crisis.
+        </p>
+
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="ZAGAMUN Crisis Briefing"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .crisis-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 5rem 0 6rem;
+    color: white;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0;
+  }
+
+  .title-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .crisis-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: left;
+  }
+
+  .crisis-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .crisis-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .crisis-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0;
+  }
+
+  .card-divider {
+    width: 65px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+  }
+
+  .crisis-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (max-width: 700px) {
+    .crisis-page {
+      padding: 3rem 0 4rem;
+    }
+
+    .crisis-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .crisis-section {
+      margin-bottom: 2.5rem;
+    }
+  }
+</style>
