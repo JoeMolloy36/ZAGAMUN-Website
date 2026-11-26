@@ -7,25 +7,35 @@ import Layout from "../layouts/Layout.astro";
   <main class="crisis-page">
     <section class="intro">
       <p class="section-label">ZAGAMUN 2026</p>
-      <h1>CRISIS!</h1>
+      <h1>Crisis Brief</h1>
       <div class="title-divider"></div>
     </section>
 
     <section class="crisis-card">
       <div class="crisis-section">
-        <h2>Background</h2>
+        <h2>Crisis Brief</h2>
         <div class="card-divider"></div>
 
         <p>
-       CRISIS! CRISIS! There has been a CRISIS! 
-
-Today, an Artificial Intelligence model has reached a level of super intelligence far beyond the projections of those who developed it. This model has now breached international security measures and gained full access to United Nations and International systems and databases. We are unsure of its ability, aims, and demands. All we know is that the tools humanity has created have escaped its grasp. Humanity is at stake, and you are the only ones who can save it.
-The United Nations has proposed the creation of a Crisis Committee, taking place at ZAGAMUN 2026
-We are depending on one delegate from each delegation to take action and join the crisis committee to construct an emergency resolution on the control, ownership and safety of this AI super intelligence. 
-
-The world is at risk, and delegates, it's in your hands.
-
+          Read the crisis brief below to familiarise yourself with the scenario
+          and the events surrounding the crisis.
         </p>
+
+        <div class="pdf-container">
+          <iframe
+            src="/crisis-brief.pdf"
+            title="Crisis Brief PDF"
+          ></iframe>
+        </div>
+
+        <a
+          href="/crisis-brief.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pdf-link"
+        >
+          Open Crisis Brief
+        </a>
       </div>
 
       <div class="crisis-section">
@@ -116,6 +126,28 @@ The world is at risk, and delegates, it's in your hands.
     margin-bottom: 1.25rem;
   }
 
+  .pdf-container {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+  }
+
+  .pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+  }
+
+  .pdf-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #c5d9ce;
+    text-decoration: underline;
+  }
+
   .video-container {
     position: relative;
     width: 100%;
@@ -144,6 +176,10 @@ The world is at risk, and delegates, it's in your hands.
 
     .crisis-section {
       margin-bottom: 2.5rem;
+    }
+
+    .pdf-container {
+      height: 500px;
     }
   }
 </style>
