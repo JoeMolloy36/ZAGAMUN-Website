@@ -13,8 +13,6 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="crisis-card">
       <div class="crisis-section">
-     
-
         <div class="pdf-container">
           <iframe
             src="/crisis-brief.pdf"
@@ -64,6 +62,7 @@ import Layout from "../layouts/Layout.astro";
 
   .intro {
     margin-bottom: 3rem;
+    text-align: center;
   }
 
   .section-label {
@@ -82,7 +81,7 @@ import Layout from "../layouts/Layout.astro";
     height: 3px;
     background: white;
     border-radius: 5px;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
   }
 
   .crisis-card {
@@ -90,7 +89,7 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     padding: 3rem;
-    text-align: left;
+    text-align: center;
   }
 
   .crisis-section {
@@ -111,30 +110,31 @@ import Layout from "../layouts/Layout.astro";
     height: 3px;
     background: white;
     border-radius: 5px;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
   }
 
   .crisis-card p {
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 1.25rem;
+    text-align: center;
   }
 
-.pdf-container {
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-top: 1.5rem;
-  background: white;
-}
+  .pdf-container {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    background: white;
+  }
 
-.pdf-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: white;
-}
+  .pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+  }
 
   .pdf-link {
     display: inline-block;
